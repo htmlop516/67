@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Обратный отсчёт</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: #0f0;
+    font-family: Arial, sans-serif;
+    font-size: 120px;
+    font-weight: bold;
+  }
+  #msg {
+    font-size: 40px;
+    text-align: center;
+    display: none;
+    color: #fff;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div id="counter">67</div>
+  <div id="msg">Привет Миша го готовить кекс, Я симин которого запустили в арбуз?</div>
+
+<script>
+  let n = 67;
+  const counter = document.getElementById('counter');
+  const msg = document.getElementById('msg');
+
+  const timer = setInterval(() => {
+    n--;
+    counter.textContent = n;
+    if (n <= 0) {
+      clearInterval(timer);
+      counter.style.display = 'none';
+      msg.style.display = 'block';
+    }
+  }, 1000);
+</script>
+</body>
+</html>
